@@ -27,6 +27,7 @@ public class InitDBService {
 
 	@PostConstruct
 	public void init() {
+		System.out.println("Test");
 		
 		Car car1 = new Car();
 		car1.setBrand("Brand1");

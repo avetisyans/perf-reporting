@@ -3,5 +3,8 @@
 	<persistence-unit name="Rel_sandbox">
 		<class>com.comp.app.entity.Car</class>
 		<class>com.comp.app.entity.Wheel</class>
+		<class>com.comp.app.entity.Person</class>
+		<class>com.comp.app.entity.Account</class>
+		<class>com.comp.app.entity.Bike</class>
 	</persistence-unit>
 </persistence>

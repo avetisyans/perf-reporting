@@ -15,9 +15,13 @@ public class Wheel {
 	
 	private String producerName;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="car_id")
-	private Car car;
+	private Car car;	                                    
+	
+	@ManyToOne
+	@JoinColumn(name="bike_id")
+	private Bike bike;
 
 	public Car getCar() {
 		return car;

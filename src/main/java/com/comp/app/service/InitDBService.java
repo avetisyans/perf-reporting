@@ -41,7 +41,7 @@ public class InitDBService {
 	public void init() {
 		
 		Car car1 = new Car();
-		car1.setBrand("Brand 1t");
+		car1.setBrand("Brand");
 		carDao.save(car1);
 		
 		Wheel wheel1 = new Wheel();

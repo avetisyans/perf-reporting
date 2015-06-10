@@ -11,7 +11,7 @@ import com.comp.app.entity.Car;
 import com.comp.app.entity.Wheel;
 
 @Service("wheelService")
-
+@Transactional
 public class WheelService {
 	
 	@Autowired
@@ -31,10 +31,25 @@ public class WheelService {
 
 	}
 	
-	@Transactional
+
 	public Wheel save(Wheel wheel) {
 		//Car car = carService.findOne((long) 1);
 		//wheel.setCar(car);
 		return wheelDao.save(wheel);
+	}
+
+	public Wheel save(Wheel wheel1, Car car) {
+		Car tempCar = carDao.findByBrand(car.getBrand());
+		
+		if (tempCar == null) {
+			carDao.save(car);
+			wheel1.setCar(car);
+			return wheelDao.save(wheel1);
+		}
+		
+		wheel1.setCar(tempCar);
+		return wheelDao.save(wheel1);
+		
+		
 	}
 }

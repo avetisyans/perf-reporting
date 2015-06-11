@@ -2,20 +2,20 @@
 	<entity>
 		<entity-name>com.comp.app.entity.Car</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>146</entity-height>
-		<entity-X-Coordinate>94</entity-X-Coordinate>
-		<entity-Y-Coordinate>250</entity-Y-Coordinate>
+		<entity-height>166</entity-height>
+		<entity-X-Coordinate>450</entity-X-Coordinate>
+		<entity-Y-Coordinate>450</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
 	</entity>
 
 	<entity>
-		<entity-name>com.comp.app.entity.Wheel</entity-name>
+		<entity-name>com.comp.app.entity.Person</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>146</entity-height>
-		<entity-X-Coordinate>430</entity-X-Coordinate>
-		<entity-Y-Coordinate>440</entity-Y-Coordinate>
+		<entity-X-Coordinate>600</entity-X-Coordinate>
+		<entity-Y-Coordinate>107</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -33,11 +33,22 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.comp.app.entity.Person</entity-name>
+		<entity-name>com.comp.app.entity.Wheel</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>166</entity-height>
+		<entity-X-Coordinate>890</entity-X-Coordinate>
+		<entity-Y-Coordinate>353</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>com.comp.app.entity.Garage</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>146</entity-height>
-		<entity-X-Coordinate>600</entity-X-Coordinate>
-		<entity-Y-Coordinate>107</entity-Y-Coordinate>
+		<entity-X-Coordinate>113</entity-X-Coordinate>
+		<entity-Y-Coordinate>385</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

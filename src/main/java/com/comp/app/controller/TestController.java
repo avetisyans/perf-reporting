@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.comp.app.dao.CarDao;
 import com.comp.app.entity.Car;
-import com.comp.app.entity.Wheel;
+import com.comp.app.entity.Garage;
 import com.comp.app.service.CarService;
+import com.comp.app.service.GarageService;
 import com.comp.app.service.WheelService;
 
 @Controller
@@ -20,42 +21,23 @@ public class TestController {
 	
 	@Autowired
 	private WheelService wheelService;
+	
+	@Autowired
+	private GarageService garageService;
 
 	@RequestMapping("/")
 	public String welcome() {
 		
-		//Car car = carService.findOne((long) 1);
-		Car car2 = new Car();
-		car2.setBrand("otherBrand");
-		
-		Car car = new Car();
-		car.setBrand("Brand");
-		//Car car1 = carDao.findByBrand(car.getBrand());
-		//car1.setBrand("tttBrand");
-		
-		Wheel wheel1 = new Wheel();
-		wheel1.setProducerName("Prod 1");
-		
-		wheelService.save(wheel1, car2);
-		wheelService.save(wheel1, car);
-		//wheel1.setCar(car1);
-		
-		//Wheel wheel2 = new Wheel();
-		//wheel2.setProducerName("Prod 2");
-		//wheel2.setCar(car1);
-		
-		//wheelService.save(wheel1, carService.findOne((long) 1).getBrand());
-		//wheelService.save(wheel2, carService.findOne((long) 1).getBrand());
+		Garage garage1 = new Garage();
+		garage1.setName("Testo Garage");
 		
 		
-/*		wheelService.save(wheel1);
-		wheelService.save(wheel2);*/
-		
-		//Car car = new Car();
-		//car.setBrand("Brand2");
-		//carService.save(car);
-		
-		
+		Car car1 = new Car();
+		car1.setBrand("Car2 Brand");
+		car1.setGarage(garage1);
+
+		carService.saveToItsGarage(car1);
+
 		return "home";
 	}
 	

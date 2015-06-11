@@ -6,5 +6,6 @@
 		<class>com.comp.app.entity.Person</class>
 		<class>com.comp.app.entity.Account</class>
 		<class>com.comp.app.entity.Bike</class>
+		<class>com.comp.app.entity.Garage</class>
 	</persistence-unit>
 </persistence>

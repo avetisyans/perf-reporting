@@ -8,10 +8,12 @@ import org.springframework.stereotype.Service;
 
 import com.comp.app.dao.AccountDao;
 import com.comp.app.dao.CarDao;
+import com.comp.app.dao.GarageDao;
 import com.comp.app.dao.PersonDao;
 import com.comp.app.dao.WheelDao;
 import com.comp.app.entity.Account;
 import com.comp.app.entity.Car;
+import com.comp.app.entity.Garage;
 import com.comp.app.entity.Person;
 import com.comp.app.entity.Wheel;
 
@@ -30,6 +32,9 @@ public class InitDBService {
 	
 	@Autowired
 	private PersonDao personDao;
+	
+	@Autowired
+	private GarageDao garageDao;
 
 	@Autowired
 	private PersonService personService;
@@ -40,14 +45,8 @@ public class InitDBService {
 	@PostConstruct
 	public void init() {
 		
-		Car car1 = new Car();
-		car1.setBrand("Brand");
-		carDao.save(car1);
-		
-		Wheel wheel1 = new Wheel();
-		wheel1.setProducerName("Prond 1");
-		wheel1.setCar(car1);
-		
-		wheelDao.save(wheel1);
+		Garage garage = new Garage();
+		garage.setName("Test Garage");
+		garageDao.save(garage);
 	}
 }

@@ -16,7 +16,7 @@ public class Bike {
 	
 	private String brand;
 	
-	@OneToMany(mappedBy="bike")
+	@OneToMany(mappedBy="bike", cascade=CascadeType.ALL)
 	private List<Wheel> wheels;
 
 	public String getBrand() {

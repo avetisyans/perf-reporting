@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.comp.app.dao.AccountDao;
 import com.comp.app.dao.PersonDao;
-import com.comp.app.entity.Account;
 import com.comp.app.entity.Person;
 
 @Service("personService")
@@ -20,13 +19,7 @@ public class PersonService {
 	@Autowired	
 	private AccountDao accountDao;
 	
-	public Person save(Person person) {
-		
-		Account account = new Account();
-		account.setNumber("33333333333333");
-		
-		person.setAccount(account);
-		
-		return personDao.save(person);
+	public Person findOne(Long id) {
+		return personDao.findOne(id);
 	}
 }

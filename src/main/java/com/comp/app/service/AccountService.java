@@ -23,4 +23,8 @@ public class AccountService {
 		
 		return accountDao.save(account);
 	}
+	
+	public Account findOne(Long id) {
+		return accountDao.findOne(id);
+	}
 }

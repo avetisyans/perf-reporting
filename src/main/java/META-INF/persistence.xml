@@ -7,5 +7,9 @@
 		<class>com.comp.app.entity.Account</class>
 		<class>com.comp.app.entity.Bike</class>
 		<class>com.comp.app.entity.Garage</class>
+		<class>com.comp.app.entity.ManagerEntity</class>
+		<class>com.comp.app.entity.Human</class>
+		<class>com.comp.app.entity.Address</class>
+		<class>com.comp.app.entity.RunInfo</class>
 	</persistence-unit>
 </persistence>

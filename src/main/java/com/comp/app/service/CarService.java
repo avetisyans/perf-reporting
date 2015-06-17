@@ -29,7 +29,9 @@ public class CarService {
 	}
 	
 	public Car save(Car car) {
-		return carDao.save(car);
+		carDao.saveAndFlush(car);
+		System.out.println("The Car has been saved");
+		return new Car();
 	}
 
 	public Car saveToItsGarage(Car car1) {

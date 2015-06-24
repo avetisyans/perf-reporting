@@ -11,5 +11,6 @@
 		<class>com.comp.app.entity.Human</class>
 		<class>com.comp.app.entity.Address</class>
 		<class>com.comp.app.entity.RunInfo</class>
+		<class>com.comp.app.entity.TestResultWithDuration</class>
 	</persistence-unit>
 </persistence>

@@ -1,7 +1,6 @@
 package com.comp.app.service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
@@ -17,12 +16,10 @@ import com.comp.app.dao.HumanDao;
 import com.comp.app.dao.ManagerEntityDao;
 import com.comp.app.dao.PersonDao;
 import com.comp.app.dao.RunInfoDao;
+import com.comp.app.dao.TestResultWithDurationDao;
 import com.comp.app.dao.WheelDao;
-import com.comp.app.entity.Account;
-import com.comp.app.entity.Address;
-import com.comp.app.entity.Human;
-import com.comp.app.entity.Person;
-import com.comp.app.entity.RunInfo;
+import com.comp.app.entity.TestResultWithDuration;
+import com.comp.app.entity.TestResultWithDuration.Result;
 
 @Service
 @Transactional
@@ -45,8 +42,8 @@ public class InitDBService {
 	
 	@Autowired
 	private HumanDao humanDao;
-	@Autowired
 	
+	@Autowired
 	private AddressDao addressDao;
 
 	@Autowired
@@ -63,16 +60,38 @@ public class InitDBService {
 	
 	@Autowired
 	private RunInfoDao runInfoDao;
+	
+	@Autowired
+	private TestResultWithDurationDao testResultWithDurationDao;
 
 	@PostConstruct
 	public void init() {
+		
+		TestResultWithDuration testResult1 = new TestResultWithDuration();
+		testResult1.setResult(Result.SUCCESS);
+		testResult1.setStartTime(new Date().getTime());
+		testResult1.setEndTime(new Date().getTime() + 3274L);
+		testResultWithDurationDao.save(testResult1);
+												
+		TestResultWithDuration testResult2 = new TestResultWithDuration();
+		testResult2.setResult(Result.SUCCESS);
+		testResult2.setStartTime(new Date().getTime());
+		testResult2.setEndTime(new Date().getTime() + 4123L);
+		testResultWithDurationDao.save(testResult2);
+												
+		TestResultWithDuration testResult3 = new TestResultWithDuration();
+		testResult3.setResult(Result.SUCCESS);  
+		testResult3.setStartTime(new Date().getTime());
+		testResult3.setEndTime(new Date().getTime() + 72465567L);
+		testResultWithDurationDao.save(testResult3);
+		
 		
 /*		Human human1 = new Human();
 		human1.setName("human1Name");
 		
 		Human human2 = new Human();
 		human2.setName("human2Name");
-	
+		
 		
 		
 		
@@ -95,33 +114,33 @@ public class InitDBService {
 /*		RunInfo parent = new RunInfo();
 		parent.setName("parentName");
 		parent.setBuildNumber("parent111");
-		
+		runInfoDao.save(parent);
 		
 		RunInfo firstChild = new RunInfo();
 		firstChild.setName("firstChildName");
 		firstChild.setBuildNumber("firstChild111");
 		firstChild.setParent(parent);
-		
+		runInfoDao.save(firstChild);
 		
 		RunInfo secondChild = new RunInfo();
 		secondChild.setName("secondChildName");
 		secondChild.setBuildNumber("secondChild222");
 		secondChild.setParent(parent);
-		
+		runInfoDao.save(secondChild);
 		
 		RunInfo FirstChildOfsecondChild = new RunInfo();
 		FirstChildOfsecondChild.setName("FirstChildOfsecondChildName");
 		FirstChildOfsecondChild.setBuildNumber("FirstChildOfsecondChild222111");
 		FirstChildOfsecondChild.setParent(secondChild);
-		
-		
-		
-		runInfoDao.save(parent);
-		runInfoDao.save(firstChild);
-		runInfoDao.save(secondChild);
 		runInfoDao.save(FirstChildOfsecondChild);*/
 		
-		Person person = new Person();
+		
+		
+		
+	//	runInfoDao.save(secondChild);
+		
+		
+/*		Person person = new Person();
 		person.setName("personName");
 		
 		Account account = new Account();
@@ -131,7 +150,12 @@ public class InitDBService {
 		
 		person.setAccount(account);
 		
-		personDao.save(person);
+		personDao.save(person);*/
+		
+/*		RunInfo runInfo = new RunInfo();
+		runInfo.setBuildNumber("#111");
+		runInfo.setNodes(new String[]{"First","Second","Third"});
+		runInfoDao.save(runInfo);*/
 		
 	}
 }

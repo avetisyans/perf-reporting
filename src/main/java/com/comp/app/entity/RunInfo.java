@@ -18,6 +18,8 @@ public class RunInfo {
 	
 	private String name;
 	
+	private String[] nodes;
+	
 	public String getName() {
 		return name;
 	}
@@ -64,5 +66,13 @@ public class RunInfo {
 	
 	public void setParent(RunInfo parent) {
 		this.parent = parent;
+	}
+
+	public String[] getNodes() {
+		return nodes;
+	}
+
+	public void setNodes(String[] nodes) {
+		this.nodes = nodes;
 	}
 }
